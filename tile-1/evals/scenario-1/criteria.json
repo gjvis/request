@@ -1,0 +1,36 @@
+{
+  "context": "This evaluation assesses how well the engineer uses the request library's cookie jar API to implement session management. The focus is on correct usage of request.jar(), proper jar instantiation per session, and using jar methods for cookie inspection and management.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Uses request.jar()",
+      "description": "Creates cookie jars using request.jar() method rather than implementing custom cookie storage or using global cookies",
+      "max_score": 25
+    },
+    {
+      "name": "Jar per session",
+      "description": "Creates a separate jar instance for each session ID to maintain session isolation, typically storing jars in a Map or object keyed by sessionId",
+      "max_score": 20
+    },
+    {
+      "name": "Passes jar to requests",
+      "description": "Correctly passes the jar option to request calls (e.g., request({url: '...', jar: sessionJar}, callback)) to enable automatic cookie handling",
+      "max_score": 20
+    },
+    {
+      "name": "Uses getCookies() method",
+      "description": "Uses jar.getCookies(url) method to retrieve cookie array for cookie inspection functionality rather than maintaining separate cookie tracking",
+      "max_score": 15
+    },
+    {
+      "name": "Implements session cleanup",
+      "description": "Properly clears session by either creating a new jar for the sessionId or removing the jar from storage, ensuring subsequent requests don't have cookies",
+      "max_score": 10
+    },
+    {
+      "name": "Correct callback handling",
+      "description": "Properly handles the request callback signature (error, response, body) and passes it through to the caller without modification",
+      "max_score": 10
+    }
+  ]
+}
