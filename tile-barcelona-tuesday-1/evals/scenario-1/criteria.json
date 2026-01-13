@@ -1,0 +1,41 @@
+{
+  "context": "This criteria evaluates how effectively an engineer uses the request package's API to implement a file downloader with cookie persistence, proxy support, streaming, and redirect tracking. The focus is exclusively on proper use of request package features, not general code quality.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Cookie jar usage",
+      "description": "Uses request.jar() to create a cookie jar instance and passes it to requests via the jar option. This enables automatic cookie persistence across requests and redirects.",
+      "max_score": 20
+    },
+    {
+      "name": "Cookie file persistence",
+      "description": "Uses a persistent cookie store (such as tough-cookie-filestore or equivalent) with request.jar(store) to save cookies to disk and reload them between program runs.",
+      "max_score": 15
+    },
+    {
+      "name": "Proxy detection",
+      "description": "Relies on request's automatic proxy detection from HTTP_PROXY environment variable. Does not need explicit proxy configuration code as request handles this automatically.",
+      "max_score": 10
+    },
+    {
+      "name": "Response streaming",
+      "description": "Uses request(url).pipe(writeStream) or equivalent to stream the response body directly to a file without buffering the entire content in memory. Does not use callback-based request with buffered response.",
+      "max_score": 25
+    },
+    {
+      "name": "Redirect tracking",
+      "description": "Listens to the 'redirect' event emitted by request to count redirects, or inspects the response.request.uri.href to get the final URL after redirects. Uses followRedirect or followAllRedirects options to control redirect behavior.",
+      "max_score": 15
+    },
+    {
+      "name": "Bytes downloaded tracking",
+      "description": "Tracks bytes downloaded by listening to 'data' events on the response stream or using stream statistics to count total bytes written to disk.",
+      "max_score": 10
+    },
+    {
+      "name": "Status code retrieval",
+      "description": "Captures the HTTP status code from the response object (response.statusCode) to include in the download summary.",
+      "max_score": 5
+    }
+  ]
+}
