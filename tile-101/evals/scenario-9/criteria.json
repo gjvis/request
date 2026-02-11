@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's timing and timeout options to measure request performance and handle timeout scenarios.",
+  "type": "weighted_checklist",
+  "capability_tested": "Request Timing and Timeout",
+  "checklist": [
+    {
+      "name": "time option",
+      "description": "Uses the time option set to true to enable timing measurements",
+      "max_score": 25
+    },
+    {
+      "name": "elapsedTime access",
+      "description": "Accesses response.elapsedTime or request.elapsedTime to get timing data",
+      "max_score": 25
+    },
+    {
+      "name": "timeout option",
+      "description": "Uses the timeout option to set request timeout in milliseconds",
+      "max_score": 25
+    },
+    {
+      "name": "Timeout error handling",
+      "description": "Detects and handles timeout errors by checking for ETIMEDOUT or ESOCKETTIMEDOUT error codes",
+      "max_score": 15
+    },
+    {
+      "name": "Timing statistics",
+      "description": "Aggregates timing data across multiple requests for performance analysis",
+      "max_score": 10
+    }
+  ]
+}

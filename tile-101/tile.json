@@ -1,0 +1,8 @@
+{
+  "name": "garethvisagie/request",
+  "version": "2.74.1",
+  "docs": "docs/index.md",
+  "describes": "pkg:npm/request@2.74.1",
+  "summary": "Simplified HTTP request client for Node.js with support for HTTPS, redirects, streaming, forms, authentication, proxies, and comprehensive HTTP features.",
+  "private": true
+}

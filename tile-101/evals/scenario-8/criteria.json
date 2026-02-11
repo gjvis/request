@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's SSL/TLS configuration options to handle custom certificates, control validation, and implement mutual TLS authentication.",
+  "type": "weighted_checklist",
+  "capability_tested": "SSL/TLS Certificate Management",
+  "checklist": [
+    {
+      "name": "strictSSL option",
+      "description": "Uses strictSSL or rejectUnauthorized option to control certificate validation",
+      "max_score": 25
+    },
+    {
+      "name": "CA certificate",
+      "description": "Provides custom CA certificate(s) using the ca option with file contents",
+      "max_score": 25
+    },
+    {
+      "name": "Client certificate",
+      "description": "Provides client certificate using cert option for mutual TLS",
+      "max_score": 20
+    },
+    {
+      "name": "Private key",
+      "description": "Provides private key using key option along with client certificate",
+      "max_score": 20
+    },
+    {
+      "name": "Certificate loading",
+      "description": "Reads certificate files from filesystem (e.g., using fs.readFileSync) before passing to options",
+      "max_score": 10
+    }
+  ]
+}

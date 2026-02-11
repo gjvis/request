@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's streaming capabilities to pipe HTTP responses directly to file streams without buffering entire responses in memory.",
+  "type": "weighted_checklist",
+  "capability_tested": "Response Streaming",
+  "checklist": [
+    {
+      "name": "pipe() method usage",
+      "description": "Uses request().pipe() to stream the response to a destination",
+      "max_score": 35
+    },
+    {
+      "name": "File stream destination",
+      "description": "Pipes to fs.createWriteStream() for writing directly to files",
+      "max_score": 25
+    },
+    {
+      "name": "No buffering",
+      "description": "Avoids buffering entire response by using streaming instead of callbacks with body parameter",
+      "max_score": 20
+    },
+    {
+      "name": "Stream events",
+      "description": "Listens to stream events like 'end', 'error', or 'close' for completion/error handling",
+      "max_score": 15
+    },
+    {
+      "name": "Multiple downloads",
+      "description": "Correctly handles multiple concurrent streaming downloads",
+      "max_score": 5
+    }
+  ]
+}

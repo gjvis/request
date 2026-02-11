@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's oauth option to automatically sign requests using OAuth 1.0 protocol with HMAC-SHA1 signatures.",
+  "type": "weighted_checklist",
+  "capability_tested": "OAuth 1.0 Signing",
+  "checklist": [
+    {
+      "name": "oauth option usage",
+      "description": "Uses the oauth option to provide OAuth 1.0 signing credentials and configuration",
+      "max_score": 30
+    },
+    {
+      "name": "Consumer credentials",
+      "description": "Provides consumer_key and consumer_secret in the oauth configuration",
+      "max_score": 20
+    },
+    {
+      "name": "Token credentials",
+      "description": "Provides token and token_secret (access token credentials) in the oauth configuration",
+      "max_score": 20
+    },
+    {
+      "name": "Signature method",
+      "description": "Specifies or relies on default HMAC-SHA1 signature_method",
+      "max_score": 15
+    },
+    {
+      "name": "Automatic signing",
+      "description": "Relies on automatic OAuth signature generation and Authorization header construction",
+      "max_score": 15
+    }
+  ]
+}

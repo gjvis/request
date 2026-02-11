@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's formData option to upload files using multipart/form-data encoding with proper file stream handling.",
+  "type": "weighted_checklist",
+  "capability_tested": "Multipart Form Data with File Uploads",
+  "checklist": [
+    {
+      "name": "formData option usage",
+      "description": "Uses the formData option to construct multipart requests",
+      "max_score": 30
+    },
+    {
+      "name": "File streaming",
+      "description": "Uses fs.createReadStream() to stream files as part of formData",
+      "max_score": 25
+    },
+    {
+      "name": "Mixed content",
+      "description": "Includes both file streams and regular text fields in the same formData object",
+      "max_score": 20
+    },
+    {
+      "name": "Multiple files",
+      "description": "Correctly handles multiple file uploads in a single request using formData",
+      "max_score": 15
+    },
+    {
+      "name": "Custom options",
+      "description": "Sets custom file options like filename or contentType using the formData field configuration",
+      "max_score": 10
+    }
+  ]
+}

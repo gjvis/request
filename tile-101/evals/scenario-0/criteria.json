@@ -1,0 +1,37 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package to make basic HTTP GET requests with callbacks and properly handles response data including status codes and error handling.",
+  "type": "weighted_checklist",
+  "capability_tested": "Basic HTTP Requests",
+  "checklist": [
+    {
+      "name": "Request import",
+      "description": "Correctly imports and uses the request package",
+      "max_score": 10
+    },
+    {
+      "name": "GET method usage",
+      "description": "Uses request.get() or request() with GET method to make HTTP requests",
+      "max_score": 20
+    },
+    {
+      "name": "Callback handling",
+      "description": "Implements callback function with (error, response, body) parameters",
+      "max_score": 25
+    },
+    {
+      "name": "Status code access",
+      "description": "Accesses response.statusCode to determine HTTP status",
+      "max_score": 20
+    },
+    {
+      "name": "Error handling",
+      "description": "Properly checks for errors in the callback and handles network/request failures",
+      "max_score": 15
+    },
+    {
+      "name": "Multiple requests",
+      "description": "Correctly handles multiple URLs by making separate request calls",
+      "max_score": 10
+    }
+  ]
+}

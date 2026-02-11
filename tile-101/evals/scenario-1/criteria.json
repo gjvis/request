@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's JSON capabilities to automatically serialize request bodies and parse response bodies without manual JSON.stringify() or JSON.parse() calls.",
+  "type": "weighted_checklist",
+  "capability_tested": "JSON Request and Response Handling",
+  "checklist": [
+    {
+      "name": "JSON option usage",
+      "description": "Uses the json option set to true or an object to enable automatic JSON handling",
+      "max_score": 30
+    },
+    {
+      "name": "POST with JSON body",
+      "description": "Correctly sends POST requests with json option containing the payload object",
+      "max_score": 25
+    },
+    {
+      "name": "Automatic parsing",
+      "description": "Leverages automatic JSON response parsing without manual JSON.parse() calls",
+      "max_score": 25
+    },
+    {
+      "name": "Content-Type header",
+      "description": "Relies on automatic Content-Type: application/json header setting via json option",
+      "max_score": 10
+    },
+    {
+      "name": "PUT/POST methods",
+      "description": "Uses appropriate HTTP methods (request.post(), request.put()) with JSON payloads",
+      "max_score": 10
+    }
+  ]
+}
