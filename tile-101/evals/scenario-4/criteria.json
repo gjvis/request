@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's redirect handling options to control and monitor HTTP redirect behavior.",
+  "type": "weighted_checklist",
+  "capability_tested": "Redirect Handling",
+  "checklist": [
+    {
+      "name": "followRedirect option",
+      "description": "Uses followRedirect option to enable or disable automatic redirect following",
+      "max_score": 25
+    },
+    {
+      "name": "maxRedirects option",
+      "description": "Uses maxRedirects option to limit the number of redirects followed",
+      "max_score": 25
+    },
+    {
+      "name": "Auto-follow behavior",
+      "description": "Understands default redirect following behavior (enabled by default)",
+      "max_score": 15
+    },
+    {
+      "name": "Redirect detection",
+      "description": "Detects redirects by checking for 3xx status codes when following is disabled",
+      "max_score": 15
+    },
+    {
+      "name": "Redirect tracking",
+      "description": "Accesses redirect information from response object or uses redirect events",
+      "max_score": 20
+    }
+  ]
+}

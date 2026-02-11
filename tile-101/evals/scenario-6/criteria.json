@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses request.defaults() to create a configured request instance that automatically applies preset options to all subsequent requests.",
+  "type": "weighted_checklist",
+  "capability_tested": "Request Defaults and Wrappers",
+  "checklist": [
+    {
+      "name": "defaults() usage",
+      "description": "Uses request.defaults() to create a new request function with preset options",
+      "max_score": 35
+    },
+    {
+      "name": "baseUrl configuration",
+      "description": "Configures baseUrl in defaults to handle relative URLs automatically",
+      "max_score": 20
+    },
+    {
+      "name": "Shared headers",
+      "description": "Sets default headers that are automatically included in all requests from the instance",
+      "max_score": 20
+    },
+    {
+      "name": "Method chaining",
+      "description": "Uses HTTP method shortcuts (get, post, put, delete) on the defaults instance",
+      "max_score": 15
+    },
+    {
+      "name": "Override capability",
+      "description": "Demonstrates that individual requests can override default options when needed",
+      "max_score": 10
+    }
+  ]
+}

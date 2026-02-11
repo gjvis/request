@@ -1,0 +1,32 @@
+{
+  "context": "This criteria evaluates whether the solution correctly uses the request package's cookie jar functionality to create, store, and automatically transmit cookies across multiple requests.",
+  "type": "weighted_checklist",
+  "capability_tested": "Cookie Jar Management",
+  "checklist": [
+    {
+      "name": "Jar creation",
+      "description": "Creates a cookie jar using request.jar()",
+      "max_score": 20
+    },
+    {
+      "name": "Jar attachment",
+      "description": "Attaches the jar to requests using the jar option",
+      "max_score": 25
+    },
+    {
+      "name": "Automatic storage",
+      "description": "Relies on automatic cookie storage from Set-Cookie response headers",
+      "max_score": 20
+    },
+    {
+      "name": "Cookie persistence",
+      "description": "Uses the same jar instance across multiple requests to maintain session state",
+      "max_score": 20
+    },
+    {
+      "name": "Cookie access",
+      "description": "Uses jar methods like getCookies() or getCookieString() to retrieve stored cookies",
+      "max_score": 15
+    }
+  ]
+}
